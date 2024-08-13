@@ -71,13 +71,23 @@ html,body{
     outline: none;
 }
 .city_weather{ 
-    border: 1px solid red;
 }
 .weathe_image{ 
     height: 40vh;
+    text-align: center;
+}
+.weathe_image img{ 
+    pointer-events: none;
+    user-select: none;
+    transform: translateY(-20px);
+    height: 100%;
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+.weathe_image img.fade-out {
+    opacity: 0;
 }
 .temp_conteiner{ 
-    border: 1px solid red;
     text-align: center;
     font-size: 40px;
 }
@@ -85,9 +95,14 @@ html,body{
     display: flex;
     justify-content: center;
 }
+.t_cont > p { 
+    margin: 0;
+    font-size: 70px;
+    font-weight: 600;
+}
 .metric{ 
-    transform: translateY(40px);
-    font-size: 40px;
+    font-size: 30px;
+    font-weight: 600;
 }
 .description_conteiner{ 
     font-size: 40px;
