@@ -11,9 +11,11 @@ const Weather = () => {
     height:"80vh"
   }
   const styleCollapsed  = { 
+    height:"10vh"
+  }
+  const err = { 
     height:"20vh"
   }
-
     const [city,setCity] = useState();
 
     const [weather,setWeather] = useState(null);
@@ -78,17 +80,16 @@ const Weather = () => {
       </div>
       {weather && (
           <div className={classes.city_weather}>
-            <WeatherCard/>
+            <WeatherCard weather={weather.weather[0].main}/>
               <div className={classes.temp_conteiner}>
                 <div className={classes.t_cont}>
-                <p>{weather.main.temp}</p><span className={classes.metric}>°C</span>
-                
+                <p>{Math.round(weather.main.temp)}</p><span className={classes.metric}>°C</span>
                 </div>
                 <p className={classes.description_conteiner}>{weather.weather[0].description}</p>
               </div>
-              
-              
-              
+              <div>
+
+              </div>
           </div>
       )}
       {error && <p className={classes.error}>{error}</p>}
